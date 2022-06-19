@@ -15,11 +15,8 @@ class Solution:
                 if d1[cur]==0:
                     continue
                 d1[cur].append(x)
-
-        
         #print(d1)
         a=[]
-        
         currr=''
         for i in range(len(searchWord)):
             currr+=searchWord[i]
