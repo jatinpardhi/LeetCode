@@ -10,6 +10,27 @@ class Solution:
         count=0
         
         while(end<l):
+            if d1[s[end]]==1:
+                while d1[s[end]]:  
+                    d1[s[start]]=0
+                    start+=1
+                    count-=1
+                d1[s[end]]=1
+                count+=1
+                end+=1
+                continue
+            d1[s[end]]=1
+            count+=1
+            maxLength=max(maxLength,count)
+            end+=1
+        return maxLength
+        
+                       
+                       
+                       
+                       
+        '''
+        while(end<l):
             d1[s[end]]+=1
             count+=1
             while d1[s[end]]>1:
@@ -19,7 +40,7 @@ class Solution:
             maxLength=max(maxLength,count)
             end+=1
         return maxLength
-            
+        ''' 
                 
             
             
