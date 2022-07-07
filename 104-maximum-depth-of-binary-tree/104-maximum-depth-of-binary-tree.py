@@ -11,8 +11,9 @@ class Solution:
             if root==None:
                 return 0
             
-            if root.left==0 and root.right==0:
-                return 1
-            return 1+ max(height(root.left),height(root.right))
+            lh=height(root.left)
+            rh=height(root.right)
+            
+            return max(lh,rh)+1
         return height(root)
         
