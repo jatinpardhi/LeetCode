@@ -16,10 +16,7 @@ class Solution:
             height(root.right,c+1)
         c=0
         height(root,c)
-        ans=[]
-        for x in d1.values():
-            ans.append(x)
-        return ans
+        return list(d1.values())
             
             
         
