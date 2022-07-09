@@ -4,65 +4,40 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-from collections import defaultdict
+import collections
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        d1=defaultdict(lambda:[])
-        def height(root,c):
-            if root==None:
-                return 0
-            d1[c].append(root.val)
-            height(root.left,c+1)
-            height(root.right,c+1)
-        c=0
-        height(root,c)
-        return list(d1.values())
-            
-            
+
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        '''
-        def height(root,h):
-            if(root==None):
-                return 0
-            hleft=height(root.left,h+1)
-            hright=height(root.right,h+1)
-           # print(max(hleft,hright)+1)
-            return(max(hleft,hright)+1)
-            
-        def lorder(root,a,count):
-            if(root==None):
-                return
-            a[count].append([root.val])
-            lorder(root.left,a,count+1)
-            lorder(root.right,a,count+1)
-            return a
-        x=0
-        h=height(root,x)
-        a=defaultdict(lambda:[])
-        ans=[]
-        
-        count=0
-        lorder(root,a,count)
-        for x in a:
-            ans.append(x)
+        ans = []
+        q = collections.deque()
+        q.append(root)
+        while q:
+            q1 = len(q)
+            a = []
+            for i in range(q1):
+                node = q.popleft()
+                if node:
+                    a.append(node.val)
+                    q.append(node.left)
+                    q.append(node.right)
+            if a:
+                ans.append(a)
         return ans
-        '''
-            
-        
+        # ans=[]
+        # q=collections.deque()
+        # q.append(root)
+        # while q:
+        #     ql=len(q)
+        #     a=[]
+        #     for i in range(ql):
+        #         node=q.popleft()
+        #         if node:
+        #             a.append(node.val)
+        #             q.append(node.left)
+        #             q.append(root.right)
+        #     if a:
+        #         ans.append(a)
+        # return ans
+       
+    
